@@ -1,9 +1,6 @@
 const path = require ("path");
-
-
 module.exports = {
   mode: "development",
-  devtool: "none",
   entry: "./src/index.js",
   output: {
     filename: "main.js",
@@ -12,16 +9,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"] 
+        test: /\.scss$/,
+        use: [
+        "style-loader", //3 inject styles into DOM
+        "css-loader", //2 translates css to js
+        "sass-loader" //1 translates scss to css
+        ]  
       }
     ]
   }
 };
-
-
-
-/** 
- * css-loader translates css to js
- * style-loader injects styles into DOM
- * */ 
