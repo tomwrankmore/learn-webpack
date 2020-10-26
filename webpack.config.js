@@ -8,5 +8,20 @@ module.exports = {
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist")
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"] 
+      }
+    ]
   }
-}
+};
+
+
+
+/** 
+ * css-loader translates css to js
+ * style-loader injects styles into DOM
+ * */ 
