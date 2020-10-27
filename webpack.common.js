@@ -13,14 +13,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/, // All files that end in scss
-        use: [
-        "style-loader", //3 inject styles into DOM
-        "css-loader", //2 translates css to js
-        "sass-loader" //1 translates scss to css
-        ]  
-      },
-      {
         /** Test is for html at the end of filename */
         test: /\.html$/,
         use: [

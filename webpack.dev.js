@@ -14,5 +14,17 @@ module.exports = merge(common, {
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist")
+  },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/, // All files that end in scss
+        use: [
+        "style-loader", //3 inject styles into DOM
+        "css-loader", //2 translates css to js
+        "sass-loader" //1 translates scss to css
+        ]  
+      }
+    ]
   }
 });
